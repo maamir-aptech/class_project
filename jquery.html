@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" width="500px" height="300px" alt="">
+    <button id="change">change</button>
+    <button id="load">Load Image</button>
+    <!-- <h1>WE are learning Jquery</h1> -->
+    <!-- <button id="btn">click</button> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let count = 0;
+        let images = [
+        "https://images.pexels.com/photos/5162531/pexels-photo-5162531.jpeg", // 0
+        "https://images.pexels.com/photos/12701834/pexels-photo-12701834.jpeg", // 1
+        "https://images.pexels.com/photos/29234302/pexels-photo-29234302.jpeg", // 2
+        "https://images.pexels.com/photos/30776320/pexels-photo-30776320.jpeg"  // 3
+        ];
+        //$("#btn").click(function(){
+        //    $("h1").css("backgroundColor","red")
+        //    $("h1").css("color","white")
+        //})
+        $("#load").click(function(){
+            $("img").attr("src",images[count])
+        })
+        $("#change").click(function(){
+            count ++;
+            $("img").attr("src",images[count])
+        })
+    </script>
+</body>
+</html>

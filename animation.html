@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      #box1 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        display: none;
+      }
+      #box2 {
+        display: none;
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+      }
+      #box3 {
+        display: none;
+        width: 200px;
+        height: 200px;
+        background-color: green;
+      }
+      #panel,
+      #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+      }
+
+      #panel {
+        padding: 50px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus necessitatibus adipisci quo hic laboriosam placeat, in cupiditate deserunt architecto porro. Libero ea voluptatem ex! Eaque rem saepe adipisci ipsa inventore?</p>
+    <button id="h">hide</button>
+    <button id="s">Show</button>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <button id="show">FadeIn</button>
+    <button id="hide">FadeOut</button>
+
+
+    <div id="flip">click</div>
+    <div id="panel">Hello World!</div>-->
+    <div class="container">
+      <div class="row"></div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      //$("#h").click(function(){
+      //    $("p").hide();
+      //})
+      //$("#s").click(function(){
+      //    $("p").show();
+      //})
+      //$("#show").click(function(){
+      //    $("#box1").fadeIn()
+      //    $("#box2").fadeIn("slow")
+      //    $("#box3").fadeIn(3000)
+      //})
+      //$("#hide").click(function(){
+      //    $("#box1").fadeOut()
+      //    $("#box2").fadeOut("slow")
+      //    $("#box3").fadeOut(3000)
+      //})
+      // $("#flip").click(function(){
+      //     $("#panel").slideToggle()
+      // })
+      let users = [];
+      $.ajax({
+        url: "https://jsonplaceholder.typicode.com/users",
+        type: "GET",
+        success: function (data) {
+          users = data;
+          users.forEach(function (d) {
+            document.querySelector(".row").innerHTML += `
+            <div class="card col-md-4">
+                 <div class="card-body">
+                     <h5 class="card-title">${d.name}</h5>
+                      <p class="card-text">${d.email}</p>
+                 </div>
+            </div>
+            `;
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
